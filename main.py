@@ -4,7 +4,7 @@ returning body with classification name
 """
 
 from fastapi import FastAPI
-import uvicorn
+# import uvicorn
 import gunicorn
 import pickle
 import os
