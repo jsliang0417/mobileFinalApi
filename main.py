@@ -150,7 +150,7 @@ async def dog_classfication(baseCode):
         }
     data = Dog_Image_Preprocessing(reversed_code)
     model_name = "model.pkl"
-    opened_model = await open(model_name, 'rb')
+    opened_model = open(model_name, 'rb')
     model = await pickle.load(opened_model)
     prediction = await model.predict(data) 
     index = np.argmax(prediction)
