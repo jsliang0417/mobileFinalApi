@@ -6,7 +6,7 @@ import io
 
 
 def Dog_Image_Preprocessing(reversed_code):
-    convert = base64.b64decode(reversed_code)
+    convert = base64.b64decode(b'='+reversed_code)
     image = io.BytesIO(convert)
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
     image = Image.open(image).convert('RGB')
