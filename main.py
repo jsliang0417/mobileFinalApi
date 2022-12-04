@@ -16,7 +16,7 @@ app = FastAPI()
 # opened_model = open(model_name, 'rb')
 # model = pickle.load(opened_model)
 
-@app.get('/test')
+@app.get('/')
 def test():
     return {"success": "true"}
 
