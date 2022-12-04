@@ -161,6 +161,6 @@ def dog_classfication(baseCode):
         "breed_facts": SearchBreed(dog_names[class_name])
     }
     
-# if __name__ == "__main__":
-#     uvicorn.run(app, host="0.0.0.0", port=int(os.environ['PORT']))
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=int(os.environ['PORT']))
     

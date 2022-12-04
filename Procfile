@@ -1,1 +1,1 @@
-web: uvicorn main:app --reload --port 5000
+worker: uvicorn main:app --reload --port 5000
