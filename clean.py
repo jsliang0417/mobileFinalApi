@@ -2,8 +2,8 @@
 # text = reading.read()
 # reading.close()
 
-def paddingCode(text):
-    text.replace('/', '_')
+def paddingCode(text: str):
+    return text.replace('/', '_')
 
 def reverseCode(code: str):
     return code.replace('_', '/')

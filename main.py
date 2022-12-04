@@ -25,7 +25,7 @@ def read_root():
 
 @app.get('/dog/{baseCode}')
 async def dog_classfication(baseCode):
-    reversed_code = reverseCode(baseCode)
+    # reversed_code = reverseCode(baseCode)
     dog_names = {
             0:"Chihuahua",
             1:"Japanese_spaniel",
