@@ -5,6 +5,7 @@ returning body with classification name
 
 from fastapi import FastAPI
 import uvicorn
+import gunicorn
 import pickle
 import os
 import numpy as np
@@ -162,5 +163,6 @@ def dog_classfication(baseCode):
     }
     
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=os.environ.get('PORT', '5000'))
+    # uvicorn.run(app, host="0.0.0.0", port=os.environ.get('PORT', '5000'))
+    gunicorn.run(app, host="0.0.0.0", port=os.environ.get('PORT', '5000'))
     
