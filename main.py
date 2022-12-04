@@ -4,6 +4,7 @@ returning body with classification name
 """
 
 from fastapi import FastAPI
+import uvicorn
 import pickle
 import os
 import numpy as np
@@ -160,7 +161,6 @@ def dog_classfication(baseCode):
         "breed_facts": SearchBreed(dog_names[class_name])
     }
     
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=int(os.environ['PORT']))
+# if __name__ == "__main__":
+#     uvicorn.run(app, host="0.0.0.0", port=int(os.environ['PORT']))
     
