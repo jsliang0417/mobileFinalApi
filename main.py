@@ -11,10 +11,10 @@ from dog import SearchBreed
 from clean import reverseCode
 from image_processing import Dog_Image_Preprocessing
 
-model_name = "model.pkl"
+# model_name = "model.pkl"
 app = FastAPI()
-opened_model = open(model_name, 'rb')
-model = pickle.load(opened_model)
+# opened_model = open(model_name, 'rb')
+# model = pickle.load(opened_model)
 
 @app.get('/test')
 def test():
@@ -147,6 +147,9 @@ def dog_classfication(baseCode):
             119:"African_hunting_dog"
         }
     data = Dog_Image_Preprocessing(reversed_code)
+    model_name = "model.pkl"
+    opened_model = open(model_name, 'rb')
+    model = pickle.load(opened_model)
     prediction = model.predict(data) 
     index = np.argmax(prediction)
     class_name = index
