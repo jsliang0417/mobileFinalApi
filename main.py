@@ -16,6 +16,10 @@ app = FastAPI()
 opened_model = open(model_name, 'rb')
 model = pickle.load(opened_model)
 
+@app.get('/test')
+def test():
+    return {"success": "true"}
+
 
 @app.get('/dog/{baseCode}')
 def dog_classfication(baseCode):
