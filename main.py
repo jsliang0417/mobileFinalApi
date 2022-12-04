@@ -4,8 +4,8 @@ returning body with classification name
 """
 
 from fastapi import FastAPI
-# import uvicorn
-import gunicorn
+import uvicorn
+# import gunicorn
 import pickle
 import os
 import numpy as np
@@ -13,10 +13,10 @@ from dog import SearchBreed
 from clean import reverseCode
 from image_processing import Dog_Image_Preprocessing
 
-# model_name = "model.pkl"
+model_name = "model.pkl"
 app = FastAPI()
-# opened_model = open(model_name, 'rb')
-# model = pickle.load(opened_model)
+opened_model = open(model_name, 'rb')
+model = pickle.load(opened_model)
 
 @app.get('/')
 def read_root():
@@ -149,9 +149,6 @@ async def dog_classfication(baseCode):
             119:"African_hunting_dog"
         }
     data = Dog_Image_Preprocessing(reversed_code)
-    model_name = "model.pkl"
-    opened_model = open(model_name, 'rb')
-    model = pickle.load(opened_model)
     prediction = await model.predict(data) 
     index = np.argmax(prediction)
     class_name = index
@@ -163,6 +160,6 @@ async def dog_classfication(baseCode):
     }
     
 if __name__ == "__main__":
-    # uvicorn.run(app, host="0.0.0.0", port=os.environ.get('PORT', '5000'))
-    gunicorn.run(app, host="0.0.0.0", port=os.environ.get('PORT', '5000'))
+    uvicorn.run(app, host="0.0.0.0", port=os.environ.get('PORT', '5000'))
+    #gunicorn.run(app, host="0.0.0.0", port=os.environ.get('PORT', '5000'))
     
