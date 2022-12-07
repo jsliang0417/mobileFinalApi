@@ -107,7 +107,7 @@ async def dog_classfication(baseCode):
             78:"Old_English_sheepdog",
             79:"Shetland_sheepdog",
             80:"collie",
-            81:"Border_collie",
+            81:"Border Collie",
             82:"Bouvier_des_Flandres",
             83:"Rottweiler",
             84:"German_shepherd",
